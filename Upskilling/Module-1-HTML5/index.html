@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Local Community Event Portal</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#events">Events</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#register">Register</a>
+
+        <a href="#feedback">Feedback</a>
+
+        <a href="#video">Video</a>
+
+        <a href="#location">Location</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <!-- Home Section -->
+
+    <section id="home">
+
+        <div id="welcomeBanner">
+
+            <h1>
+                Welcome to the Local Community Event Portal
+            </h1>
+
+            <p>
+                Residents can register for events,
+                check locations, and access community services.
+            </p>
+
+            <span style="color:red; font-weight:bold;">
+
+                Special Offer:
+                Free Entry for First 50 Registrations!
+
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- Events Section -->
+
+    <section id="events">
+
+        <h2>Upcoming Events</h2>
+
+        <ul>
+
+            <li>Music Festival</li>
+
+            <li>Food Carnival</li>
+
+            <li>Community Marathon</li>
+
+        </ul>
+
+    </section>
+
+    <!-- Gallery Section -->
+
+    <section id="gallery">
+
+        <h2>Event Gallery</h2>
+
+        <table>
+
+            <tr>
+
+                <td>
+
+                    <img src="https://via.placeholder.com/200"
+                         alt="Event 1"
+                         ondblclick="enlargeImage(this)">
+
+                </td>
+
+                <td>
+
+                    <img src="https://via.placeholder.com/200"
+                         alt="Event 2">
+
+                </td>
+
+                <td>
+
+                    <img src="https://via.placeholder.com/200"
+                         alt="Event 3">
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>Music Festival</td>
+
+                <td>Food Carnival</td>
+
+                <td>Community Marathon</td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Registration Section -->
+
+    <section id="register">
+
+        <h2>Event Registration</h2>
+
+        <form>
+
+            <input type="text"
+                   placeholder="Enter your name"
+                   required
+                   autofocus>
+
+            <br><br>
+
+            <input type="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <br><br>
+
+            <input type="text"
+                   id="phone"
+                   placeholder="Enter phone number"
+                   onblur="validatePhone()">
+
+            <br><br>
+
+            <input type="date">
+
+            <br><br>
+
+            <select id="eventSelect"
+                    onchange="showFee()">
+
+                <option value="">
+                    Select Event
+                </option>
+
+                <option value="10">
+                    Music Festival
+                </option>
+
+                <option value="20">
+                    Food Carnival
+                </option>
+
+                <option value="15">
+                    Community Marathon
+                </option>
+
+            </select>
+
+            <p id="eventFee"></p>
+
+            <br>
+
+            <textarea
+                placeholder="Enter message">
+            </textarea>
+
+            <br><br>
+
+            <button type="button"
+                    onclick="showConfirmation()">
+
+                Register
+
+            </button>
+
+            <br><br>
+
+            <button type="button"
+                    onclick="savePreference()">
+
+                Save Preference
+
+            </button>
+
+            <button type="button"
+                    onclick="clearPreferences()">
+
+                Clear Preferences
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- Feedback Section -->
+
+    <section id="feedback">
+
+        <h2>Feedback</h2>
+
+        <textarea
+            id="feedbackText"
+            placeholder="Enter feedback"
+            onkeyup="countCharacters()">
+        </textarea>
+
+        <p id="charCount">
+
+            Characters: 0
+
+        </p>
+
+    </section>
+
+    <!-- Video Section -->
+
+    <section id="video">
+
+        <h2>Event Promo Video</h2>
+
+        <video width="400"
+               controls
+               oncanplay="videoReady()">
+
+            <source
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                type="video/mp4">
+
+        </video>
+
+        <p id="videoMessage"></p>
+
+    </section>
+
+    <!-- Location Section -->
+
+    <section id="location">
+
+        <h2>Find Nearby Events</h2>
+
+        <button onclick="findLocation()">
+
+            Find Nearby Events
+
+        </button>
+
+        <p id="locationResult"></p>
+
+    </section>
+
+    <!-- Contact Section -->
+
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>
+
+            Email:
+            communityportal@gmail.com
+
+        </p>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>ds
